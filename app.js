@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 
 const userRouter = require('./routes/user-routes');
+const postRouter = require('./routes/post-routes');
+const commentRouter = require('./routes/comment-routes');
 
 const globalErrorHandler = require('./controllers/error-controller');
 
@@ -19,6 +21,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use('/api/v1/user', userRouter);
+app.use('/api/v1/post', postRouter);
+app.use('/api/v1/comment', commentRouter);
 
 app.use('*', (req, res, next) => {
   const port =
