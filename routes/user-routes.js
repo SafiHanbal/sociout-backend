@@ -32,6 +32,6 @@ router.route('/me').get(getMe).patch(updateMe).delete(deleteMe);
 
 // User routes for admin
 router.route('/').get(getAllUsers).post(createUser);
-router.route('/:username').get(getUser).patch(updateUser).delete(deleteUser);
+router.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 module.exports = router;
