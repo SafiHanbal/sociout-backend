@@ -1,4 +1,6 @@
 const express = require('express');
+
+const { protect, strictTo } = require('../controllers/auth-controller');
 const {
   getAllPosts,
   createPost,
@@ -9,7 +11,11 @@ const {
 
 const router = express.Router();
 
-router.route('/').get(getAllPosts).post(createPost);
-router.route('/:id').get(getPost).patch(updatePost).delete(deletePost);
+router.route('/').get(getAllPosts).post(protect, createPost);
+router
+  .route('/:id')
+  .get(getPost)
+  .patch(protect, updatePost)
+  .delete(protect, deletePost);
 
 module.exports = router;

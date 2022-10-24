@@ -1,3 +1,4 @@
+const { promisify } = require('util');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const catchAsync = require('../utils/catch-async/catch-async');
@@ -12,8 +13,8 @@ const createAndSendToken = (res, statusCode, user) => {
 
   res.status(statusCode).json({
     status: 'success',
-    token,
     data: {
+      token,
       user,
     },
   });
@@ -117,3 +118,40 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
   createAndSendToken(res, 200, user);
 });
+
+exports.protect = catchAsync(async (req, res, next) => {
+  if (!req.headers.authorization?.startsWith('Bearer'))
+    return next(
+      new AppError('You are not logged in! Please login to continue!', 400)
+    );
+  const authorizationToken = req.headers.authorization.split(' ')[1];
+  const decoded = await promisify(jwt.verify)(
+    authorizationToken,
+    process.env.JWT_SECRET
+  );
+
+  const user = await User.findById(decoded.id);
+
+  if (!user)
+    return next(
+      new AppError('User associated with this token no longer exist', 400)
+    );
+
+  if (user.passwordChangedAfter(decoded.iat))
+    return next(
+      new AppError('User recently changed password. Please log in again!', 401)
+    );
+
+  req.user = user;
+  next();
+});
+
+exports.strictTo =
+  (...roles) =>
+  (req, res, next) => {
+    if (!roles.includes(req.user.role))
+      return next(
+        new AppError('You are not allowed to perform this task!', 400)
+      );
+    next();
+  };

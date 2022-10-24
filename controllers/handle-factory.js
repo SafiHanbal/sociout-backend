@@ -40,7 +40,7 @@ exports.getOne = (Model) =>
 
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
-    const doc = Model.create(req.body);
+    const doc = await Model.create(req.body);
     if (!doc) return next(new AppError(`Error in creating document`, 400));
 
     res.status(200).json({
