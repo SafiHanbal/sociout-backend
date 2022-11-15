@@ -7,11 +7,17 @@ const {
   getPost,
   updatePost,
   deletePost,
+  uploadImages,
+  resizeUserPhoto,
 } = require('../controllers/post-controller');
 
 const router = express.Router();
 
-router.route('/').get(getAllPosts).post(protect, createPost);
+router
+  .route('/')
+  .get(getAllPosts)
+  .post(protect, uploadImages, resizeUserPhoto, createPost);
+
 router
   .route('/:id')
   .get(getPost)
