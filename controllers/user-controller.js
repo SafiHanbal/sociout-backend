@@ -67,7 +67,7 @@ exports.searchUsers = catchAsync(async (req, res, next) => {
 exports.followUser = catchAsync(async (req, res, next) => {
   const { userId } = req.params;
 
-  if (req.user.following.includes(userId))
+  if (req.user?.following?.includes(userId))
     return next(new AppError('Already followig user!', 400));
 
   const currentUserId = req.user?._id;
@@ -88,7 +88,24 @@ exports.followUser = catchAsync(async (req, res, next) => {
 });
 
 exports.unfollowUser = catchAsync(async (req, res, next) => {
+  const { userId } = req.params;
+
+  if (!req.user?.following?.includes(userId))
+    return next(new AppError('You are not following provided user', 400));
+
+  const currentUserId = req.user?._id;
+  await User.findByIdAndUpdate(currentUserId, { $pull: { following: userId } });
+
+  const user = await User.findByIdAndUpdate(
+    userId,
+    { $inc: { followerCount: -1 } },
+    { new: true }
+  );
+
   res.status(200).json({
     status: 'success',
+    data: {
+      user,
+    },
   });
 });
