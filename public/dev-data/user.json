@@ -1,0 +1,182 @@
+[
+  {
+    "email": "safihanbal@onetouch.io",
+    "userName": "Safi Hanbal",
+    "image": "http://127.0.0.1:8000/images/user/safi-hanbal.jpg",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis scelerisque dolor. Aliquam rhoncus libero et lacus placerat tincidunt. Integer convallis porta dui a ultricies.",
+    "interests": ["poetry", "learning"],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "shrivatsa-narasimhan@example.com",
+    "userName": "Shrivatsa Narasimhan",
+    "image": "http://127.0.0.1:8000/images/user/shrivatsa-narasimhan.jpg",
+    "bio": "A toast to all the mistakes we make. We learn from them. We grow because of them. So let's celebrate how far we've come by toasting to all our screw-ups, no? Cheers! 🥂",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "vijaya-krish@example.com",
+    "userName": "Vijaya Krish",
+    "image": "http://127.0.0.1:8000/images/user/vijaya-krish.jpg",
+    "bio": "We all have different hustles, but we’re all inspired by the hustlers who never give up. Cheers to the hustlers of IG.",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "abhilash-ravi@example.com",
+    "userName": "Abhilash Ravi",
+    "image": "http://127.0.0.1:8000/images/user/abhilash-ravi.jpg",
+    "bio": "Keep up the hustle, you got this",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "rohan-chaudhry@example.com",
+    "userName": "Rohan Chaudhry",
+    "image": "http://127.0.0.1:8000/images/user/rohan-chaudhry.jpg",
+    "bio": "The best way to be successful is to surround yourself with people who will be inspiring, challenging, and motivational.",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "abhinav-gupta@example.com",
+    "userName": "Abhinav Gupta",
+    "image": "http://127.0.0.1:8000/images/user/abhinav-gupta.jpg",
+    "bio": "How can you find your true calling? Listen to yourself. But don't just listen to yourself—hear yourself. Hear yourself speak, laugh, and cry.",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "karan-chatterjee@example.com",
+    "userName": "Karan Chatterjee",
+    "image": "http://127.0.0.1:8000/images/user/karan-chatterjee.jpg",
+    "bio": "The best thing about starting your own business is that it really is different every time—from where you work to who you work with to what kind of work you do.",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "jayesh-oza@example.com",
+    "userName": "Jayesh Oza",
+    "image": "http://127.0.0.1:8000/images/user/jayesh-oza.jpg",
+    "bio": "Hey, buddy. Do you want to get organized? I can help you with that!",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "gurdeep-jhaveri@example.com",
+    "userName": "Gurdeep Jhaveri",
+    "image": "http://127.0.0.1:8000/images/user/gurdeep-jhaveri.jpg",
+    "bio": "Only you can hustle and grind like you. But we can help you feel energized, mentally focused, and ready",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "harish-prakash@example.com",
+    "userName": "Harish Prakash",
+    "image": "http://127.0.0.1:8000/images/user/harish-prakash.jpg",
+    "bio": "Through hard work and dedication, anything is possible.",
+    "interests": [],
+    "gender": "male",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "shakti-dixit@example.com",
+    "userName": "Shakti Dixit",
+    "image": "http://127.0.0.1:8000/images/user/shakti-dixit.jpg",
+    "bio": "Here's to a year of growth, new projects and the fulfillment of your dreams🍾",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "bhavya-mahajan@example.com",
+    "userName": "Bhavya Mahajan",
+    "image": "http://127.0.0.1:8000/images/user/bhavya-mahajan.jpg",
+    "bio": "You’ll be ready to start out and build your small business when you have the right tools and resources. We’re here to help.",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "abha-bobal@example.com",
+    "userName": "Abha Bobal",
+    "image": "http://127.0.0.1:8000/images/user/abha-bobal.jpg",
+    "bio": "Never stop learning, never stop improving and growing your business through every step of the journey.",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "darika-gandhi@example.com",
+    "userName": "Darika Gandhi",
+    "image": "http://127.0.0.1:8000/images/user/darika-gandhi.jpg",
+    "bio": "Go ahead, dream big. How do you want to grow, and how will you get there? 📈",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "khushi-shankar@example.com",
+    "userName": "Khushi Shankar",
+    "image": "http://127.0.0.1:8000/images/user/khushi-shankar.jpg",
+    "bio": "How we feel when we finally quit our jobs and go on to pursue our dreams. ✔💯",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "ankita-subramaniam@example.com",
+    "userName": "Ankita Subramaniam",
+    "image": "http://127.0.0.1:8000/images/user/ankita-subramaniam.jpg",
+    "bio": "The grass is always greener...on the other side. And in the big city, where we all have places to be!",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "indrani-khatri@example.com",
+    "userName": "Indrani Khatri",
+    "image": "http://127.0.0.1:8000/images/user/indrani-khatri.jpg",
+    "bio": "No matter how small or big you're starting out, you can always turn your dreams into reality.",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "apurva-acharya@example.com",
+    "userName": "Apurva Acharya",
+    "image": "http://127.0.0.1:8000/images/user/apurva-acharya.jpg",
+    "bio": "This is for all the dreamers who are changing their world.",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "namrata-dubey@example.com",
+    "userName": "Namrata Dubey",
+    "image": "http://127.0.0.1:8000/images/user/namrata-dubey.jpg",
+    "bio": "Hey, you! You’re not afraid of hard work, are you?",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  },
+  {
+    "email": "dhriti-nori@example.com",
+    "userName": "Dhriti Nori",
+    "image": "http://127.0.0.1:8000/images/user/dhriti-nori.jpg",
+    "bio": "What can we be when we grow up? Hmm... Maybe entrepreneurs ?",
+    "interests": [],
+    "gender": "female",
+    "password": "$2a$12$1kTxFf9L/3H7J93g8/qHSekohfq7JysBsuAbe0ocieJem7BOR1TbO"
+  }
+]

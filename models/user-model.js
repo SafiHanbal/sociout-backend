@@ -17,32 +17,21 @@ const userSchema = new mongoose.Schema(
       enum: ['admin', 'user'],
       default: 'user',
     },
-    name: String,
     userName: {
       type: String,
       required: [true, 'Please provide a username!'],
-      unique: [true, 'This username is already taken. Please try another!'],
     },
-    displayPicture: {
+    image: {
       type: String,
       default: 'http://127.0.0.1:8000/images/user/default.jpg',
     },
-    banner: {
-      type: String,
+    followerCount: {
+      type: Number,
+      default: 0,
     },
     bio: String,
-    interests: [String],
-    dateOfBirth: {
-      type: Date,
-    },
-    gender: {
-      type: String,
-      enum: {
-        values: ['male', 'female', 'other'],
-        message: 'Please specify your gender!',
-      },
-    },
-    followers: {
+    dateOfBirth: Date,
+    following: {
       type: [mongoose.Schema.ObjectId],
       default: [],
     },
