@@ -20,7 +20,6 @@ exports.createUser = catchAsync(async (req, res, next) => {
 // Me controllers
 exports.getMe = catchAsync(async (req, res, next) => {
   const userId = req.user?._id;
-  console.log(req.user);
 
   const user = await User.findById(userId);
 

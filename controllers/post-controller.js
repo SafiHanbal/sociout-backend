@@ -2,12 +2,28 @@ const multer = require('multer');
 const sharp = require('sharp');
 const catchAsync = require('../utils/catch-async/catch-async');
 const Post = require('../models/post-model');
-const { getAll, getOne, updateOne, deleteOne } = require('./handle-factory');
+const User = require('../models/user-model');
+const { getOne, updateOne, deleteOne } = require('./handle-factory');
 
-exports.getAllPosts = getAll(Post);
 exports.getPost = getOne(Post);
 exports.updatePost = updateOne(Post);
 exports.deletePost = deleteOne(Post);
+
+exports.getPosts = catchAsync(async (req, res, next) => {
+  let posts = await Post.find();
+  posts = await User.populate(posts, {
+    path: 'user',
+    select: 'userName image',
+  });
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      results: posts.length,
+      posts,
+    },
+  });
+});
 
 const multerStorage = multer.memoryStorage();
 

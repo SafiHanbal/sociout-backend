@@ -11,7 +11,6 @@ exports.getAll = (Model) =>
       .paginate();
 
     const doc = await features.query;
-    console.log(doc);
     if (!doc) return next(new AppError('No document found!', 404));
 
     res.status(200).json({

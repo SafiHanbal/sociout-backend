@@ -2,7 +2,7 @@ const express = require('express');
 
 const { protect, strictTo } = require('../controllers/auth-controller');
 const {
-  getAllPosts,
+  getPosts,
   createPost,
   getPost,
   updatePost,
@@ -15,7 +15,7 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(getAllPosts)
+  .get(protect, getPosts)
   .post(protect, uploadImages, resizeUserPhoto, createPost);
 
 router
