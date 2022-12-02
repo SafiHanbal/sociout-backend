@@ -30,7 +30,6 @@ const userSchema = new mongoose.Schema(
       default: 0,
     },
     bio: String,
-    dateOfBirth: Date,
     following: {
       type: [mongoose.Schema.ObjectId],
       default: [],

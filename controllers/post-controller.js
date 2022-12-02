@@ -3,6 +3,7 @@ const sharp = require('sharp');
 const catchAsync = require('../utils/catch-async/catch-async');
 const Post = require('../models/post-model');
 const User = require('../models/user-model');
+const Like = require('../models/like-model');
 const { getOne, updateOne, deleteOne } = require('./handle-factory');
 
 exports.getPost = getOne(Post);
@@ -10,11 +11,25 @@ exports.updatePost = updateOne(Post);
 exports.deletePost = deleteOne(Post);
 
 exports.getPosts = catchAsync(async (req, res, next) => {
-  let posts = await Post.find();
+  const userId = req.user?._id;
+
+  let posts = await Post.find().sort('-createdAt');
   posts = await User.populate(posts, {
     path: 'user',
     select: 'userName image',
   });
+
+  posts = await Promise.all(
+    posts.map(async (post) => {
+      const isLiked = Boolean(
+        await Like.findOne({ user: userId, post: post?._id })
+      );
+
+      const { _id, user, images, likesCount, caption, createdAt } = post;
+
+      return { _id, user, images, likesCount, caption, isLiked, createdAt };
+    })
+  );
 
   res.status(200).json({
     status: 'success',
