@@ -1,6 +1,8 @@
 const multer = require('multer');
 const sharp = require('sharp');
 const catchAsync = require('../utils/catch-async/catch-async');
+const APIFeatures = require('../utils/api-features/api-features');
+
 const Post = require('../models/post-model');
 const User = require('../models/user-model');
 const Like = require('../models/like-model');
@@ -13,11 +15,19 @@ exports.deletePost = deleteOne(Post);
 exports.getPosts = catchAsync(async (req, res, next) => {
   const userId = req.user?._id;
 
-  let posts = await Post.find().sort('-createdAt');
-  posts = await User.populate(posts, {
-    path: 'user',
-    select: 'userName image',
-  });
+  const query = new APIFeatures(Post.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate().query;
+
+  let posts = await query
+    .populate('comments')
+    .populate({ path: 'user', model: 'User', select: 'userName image' })
+    .populate({
+      path: 'comments',
+      populate: [{ path: 'user', model: 'User', select: 'userName image' }],
+    });
 
   posts = await Promise.all(
     posts.map(async (post) => {
@@ -25,9 +35,19 @@ exports.getPosts = catchAsync(async (req, res, next) => {
         await Like.findOne({ user: userId, post: post?._id })
       );
 
-      const { _id, user, images, likesCount, caption, createdAt } = post;
+      const { _id, user, images, likesCount, caption, comments, createdAt } =
+        post;
 
-      return { _id, user, images, likesCount, caption, isLiked, createdAt };
+      return {
+        _id,
+        user,
+        images,
+        likesCount,
+        caption,
+        comments,
+        isLiked,
+        createdAt,
+      };
     })
   );
 
